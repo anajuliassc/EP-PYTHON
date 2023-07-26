@@ -7,7 +7,7 @@ while True:
     ret, frame = cam.read()
 
     img_hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
-    verde_lower = np.array([20, 50, 70])
+    verde_lower = np.array([25, 50, 70])
     verde_upper = np.array([100, 255, 255])
 
     mask = cv.inRange(img_hsv, verde_lower, verde_upper)
