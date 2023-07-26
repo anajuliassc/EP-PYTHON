@@ -1,0 +1,15 @@
+import numpy as np
+import cv2 as cv
+
+
+def limit_green(color):
+    green = np.uint8([[[0, 255, 0]]])
+    hsvGreen = cv.cvtColor(green, cv.COLOR_BRG2HSV)
+
+    limit_min = hsvGreen[0][0][0] - 10, 100, 100
+    limit_max = hsvGreen[0][0][0] + 10, 255, 255
+
+    limit_min = np.array(limit_min, dtype=np.uint8)
+    limit_max = np.array(limit_max, dtype=np.uint8)
+
+    return limit_min, limit_max
